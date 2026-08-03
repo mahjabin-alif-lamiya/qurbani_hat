@@ -1,65 +1,80 @@
-import Image from "next/image";
+import Link from 'next/link';
+// আমরা সরাসরি JSON ফাইল থেকে ডাটা ইম্পোর্ট করছি (সবচেয়ে সহজ নিয়ম)
+import animalsData from '../../public/animals.json';
 
-export default function Home() {
+export default function HomePage() {
+  // রিকোয়ারমেন্ট অনুযায়ী হোম পেজে মাত্র ৪টি পশু দেখাতে হবে, তাই slice করলাম
+  const featuredAnimals = animalsData.slice(0, 4);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-gray-50 min-h-screen">
+      
+      {/* ১. Hero Section */}
+      <section className="bg-green-700 text-white text-center py-20 px-4">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">স্বাগতম কুরবানির হাটে! 🐂🐐</h1>
+        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          আপনার কুরবানির জন্য সুস্থ, সবল এবং খাঁটি দেশি পশু বুকিং করুন ঘরে বসেই।
+        </p>
+        <Link href="/animals" className="bg-white text-green-700 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition">
+          Browse Animals
+        </Link>
+      </section>
+
+      {/* ২. Featured Animals (৪টি পশু) */}
+      <section className="max-w-6xl mx-auto py-16 px-4">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Featured Animals</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredAnimals.map((animal) => (
+            <div key={animal.id} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between">
+              <img src={animal.image} alt={animal.name} className="w-full h-48 object-cover" />
+              <div className="p-4 flex-grow">
+                <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">{animal.type}</span>
+                <h3 className="text-xl font-bold mt-2 text-gray-800">{animal.name}</h3>
+                <p className="text-sm text-gray-500">Breed: {animal.breed}</p>
+                <p className="text-sm text-gray-500">Location: {animal.location}</p>
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-lg font-bold text-red-500">৳{animal.price.toLocaleString()}</span>
+                  <span className="text-xs bg-gray-100 p-1 rounded font-medium">{animal.weight} KG</span>
+                </div>
+              </div>
+              <div className="p-4 pt-0">
+                <Link href={`/animals/${animal.id}`} className="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition">
+                  Details
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ৩. Extra Section 1: Qurbani Tips */}
+      <section className="bg-green-50 py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Qurbani Tips 💡</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h4 className="font-bold text-lg text-green-700 mb-2">পশু চেনার উপায়</h4>
+              <p className="text-gray-600 text-sm">পশুর বয়স নিশ্চিত করুন (গরুর অন্তত ২ বছর, ছাগলের ১ বছর)। দাঁত দেখে বয়স যাচাই করুন।</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h4 className="font-bold text-lg text-green-700 mb-2">সুস্থতা যাচাই</h4>
+              <p className="text-gray-600 text-sm">পশুর চোখ উজ্জ্বল কি না, পিঠের কুঁজ শক্ত কি না এবং পশুটি চঞ্চল কি না তা খেয়াল রাখুন।</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* ৪. Extra Section 2: Top Breeds */}
+      <section className="max-w-4xl mx-auto py-16 px-4 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Top Breeds 🏆</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Mirzapuri Red Cow</span>
+          <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Shahiwal Cow</span>
+          <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Black Bengal Goat</span>
+          <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Jamunapari Goat</span>
+        </div>
+      </section>
+
     </div>
   );
 }
