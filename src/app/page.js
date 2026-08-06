@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaCow, FaLightbulb, FaAward } from 'react-icons/fa6';
 // আমরা সরাসরি JSON ফাইল থেকে ডাটা ইম্পোর্ট করছি (সবচেয়ে সহজ নিয়ম)
 import animalsData from '../../public/animals.json';
 
@@ -11,7 +12,9 @@ export default function HomePage() {
       
       {/* ১. Hero Section */}
       <section className="bg-green-700 text-white text-center py-20 px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">স্বাগতম কুরবানির হাটে! 🐂🐐</h1>
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 flex items-center justify-center gap-3">
+  স্বাগতম কুরবানির হাটে! <FaCow className="text-white" />
+</h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           আপনার কুরবানির জন্য সুস্থ, সবল এবং খাঁটি দেশি পশু বুকিং করুন ঘরে বসেই।
         </p>
