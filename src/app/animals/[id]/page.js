@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { toast } from "react-toastify"; // npm install react-toastify করে নিও যদি না থাকে
+import { toast } from "react-toastify";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function AnimalDetailsPage() {
   const { id } = useParams();
   const [animal, setAnimal] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const user = null; // পরে AuthContext থেকে বসাবে
+  const { user } = useAuth();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -43,7 +44,6 @@ export default function AnimalDetailsPage() {
       return;
     }
 
-    // এখানে DB/localStorage এ save করার দরকার নাই — assignment এ বলা আছে
     toast.success("Booking submitted successfully!");
     setFormData({ name: "", email: "", phone: "", address: "" });
   };
@@ -66,7 +66,6 @@ export default function AnimalDetailsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-      {/* Left: Animal Details */}
       <div>
         <img
           src={animal.image}
@@ -87,7 +86,6 @@ export default function AnimalDetailsPage() {
         <p className="mt-4 text-gray-700">{animal.description}</p>
       </div>
 
-      {/* Right: Booking Form */}
       <div className="border rounded-xl p-6 shadow-sm">
         <h2 className="text-xl font-semibold mb-4">Book This Animal</h2>
 
