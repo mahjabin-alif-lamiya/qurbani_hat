@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QurbaniHat - Livestock Booking Platform
+
+## Purpose
+A modern web marketplace where users can browse cows and goats for Qurbani, view details, and place a booking after logging in. Built for the Software Engineering course assignment (Category A8-Pineapple).
+
+## Live URL
+(https://qurbani-hat-ebon-six.vercel.app/)
+
+## Key Features
+- Home page with featured animals, Qurbani tips, and top breeds
+- All Animals page with sort by price
+- Animal Details page with a booking form
+- Login and Register with Email/Password and Google (Firebase Authentication)
+- My Profile page showing the logged-in user's name, photo, and email
+- Update Information page to edit name and photo
+- Toast notifications for actions like login, logout, and booking
+- Custom 404 (Not Found) page
+- Fully responsive layout for mobile, tablet, and desktop
+
+## npm Packages Used
+- next, react, react-dom - core framework
+- firebase - authentication (Email/Password and Google sign-in)
+- react-toastify - toast notifications
+- react-icons - icons used across the app
+- tailwindcss - styling
 
 ## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
