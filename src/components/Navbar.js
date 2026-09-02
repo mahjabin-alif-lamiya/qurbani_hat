@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useAuth } from "@/contexts/AuthContext";
 import { FaCow } from "react-icons/fa6";
+import Avatar from "@/components/Avatar";
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
@@ -33,11 +34,7 @@ export default function Navbar() {
             user ? (
               <div className="flex items-center gap-3">
                 <Link href="/my-profile">
-                  <img
-                    src={user.photoURL || "/default-avatar.png"}
-                    alt="avatar"
-                    className="w-8 h-8 rounded-full object-cover border"
-                  />
+                  <Avatar user={user} size="w-8 h-8" textSize="text-sm" />
                 </Link>
                 <button
                   onClick={handleLogout}

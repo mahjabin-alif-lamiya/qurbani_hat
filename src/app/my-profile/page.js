@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
+import Avatar from "@/components/Avatar";
 
 export default function MyProfilePage() {
   const { user, loading } = useAuth();
@@ -24,11 +25,9 @@ export default function MyProfilePage() {
 
   return (
     <div className="max-w-md mx-auto px-4 py-16 text-center">
-      <img
-        src={user.photoURL || "/default-avatar.png"}
-        alt={user.displayName || "User"}
-        className="w-28 h-28 rounded-full mx-auto object-cover border mb-4"
-      />
+      <div className="flex justify-center mb-4">
+        <Avatar user={user} size="w-28 h-28" textSize="text-4xl" />
+      </div>
       <h1 className="text-2xl font-bold">{user.displayName || "No name set"}</h1>
       <p className="text-gray-600 mt-1">{user.email}</p>
 
