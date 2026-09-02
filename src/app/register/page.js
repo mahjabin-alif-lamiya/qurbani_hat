@@ -10,6 +10,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { FcGoogle } from "react-icons/fc";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -108,9 +109,9 @@ export default function RegisterPage() {
 
       <button
         onClick={handleGoogleRegister}
-        className="w-full mt-4 border py-2 rounded-lg hover:bg-gray-50 font-medium"
+        className="w-full mt-4 border py-2 rounded-lg hover:bg-gray-50 font-medium flex items-center justify-center gap-2"
       >
-        Continue with Google
+        <FcGoogle className="text-xl" /> Continue with Google
       </button>
 
       <p className="text-center text-sm text-gray-600 mt-6">
