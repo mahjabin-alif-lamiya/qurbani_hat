@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { FaCow, FaLightbulb, FaAward } from 'react-icons/fa6';
-// আমরা সরাসরি JSON ফাইল থেকে ডাটা ইম্পোর্ট করছি (সবচেয়ে সহজ নিয়ম)
 import animalsData from '../../public/animals.json';
 
 export default function HomePage() {
-  // রিকোয়ারমেন্ট অনুযায়ী হোম পেজে মাত্র ৪টি পশু দেখাতে হবে, তাই slice করলাম
   const featuredAnimals = animalsData.slice(0, 4);
 
   return (
@@ -13,8 +11,8 @@ export default function HomePage() {
       {/* ১. Hero Section */}
       <section className="bg-green-700 text-white text-center py-20 px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 flex items-center justify-center gap-3">
-  স্বাগতম কুরবানির হাটে! <FaCow className="text-white" />
-</h1>
+          স্বাগতম কুরবানির হাটে! <FaCow className="text-white" />
+        </h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           আপনার কুরবানির জন্য সুস্থ, সবল এবং খাঁটি দেশি পশু বুকিং করুন ঘরে বসেই।
         </p>
@@ -53,15 +51,17 @@ export default function HomePage() {
       {/* ৩. Extra Section 1: Qurbani Tips */}
       <section className="bg-green-50 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Qurbani Tips 💡</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
+            Qurbani Tips <FaLightbulb className="text-yellow-500" />
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="font-bold text-lg text-green-700 mb-2">পশু চেনার উপায়</h4>
-              <p className="text-gray-600 text-sm">পশুর বয়স নিশ্চিত করুন (গরুর অন্তত ২ বছর, ছাগলের ১ বছর)। দাঁত দেখে বয়স যাচাই করুন।</p>
+              <h4 className="font-bold text-lg text-green-700 mb-2">পশু চেনার উপায়</h4>
+              <p className="text-gray-600 text-sm">পশুর বয়স নিশ্চিত করুন (গরুর অন্তত ২ বছর, ছাগলের ১ বছর)। দাঁত দেখে বয়স যাচাই করুন।</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h4 className="font-bold text-lg text-green-700 mb-2">সুস্থতা যাচাই</h4>
-              <p className="text-gray-600 text-sm">পশুর চোখ উজ্জ্বল কি না, পিঠের কুঁজ শক্ত কি না এবং পশুটি চঞ্চল কি না তা খেয়াল রাখুন।</p>
+              <p className="text-gray-600 text-sm">পশুর চোখ উজ্জ্বল কি না, পিঠের কুঁজ শক্ত কি না এবং পশুটি চঞ্চল কি না তা খেয়াল রাখুন।</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,9 @@ export default function HomePage() {
 
       {/* ৪. Extra Section 2: Top Breeds */}
       <section className="max-w-4xl mx-auto py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Top Breeds 🏆</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center justify-center gap-2">
+          Top Breeds <FaAward className="text-yellow-600" />
+        </h2>
         <div className="flex flex-wrap justify-center gap-4">
           <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Mirzapuri Red Cow</span>
           <span className="bg-white border border-gray-300 px-4 py-2 rounded-full font-medium text-gray-700 shadow-sm">Shahiwal Cow</span>
