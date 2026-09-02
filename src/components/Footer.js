@@ -1,3 +1,5 @@
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-12">
@@ -18,10 +20,10 @@ export default function Footer() {
 
         <div>
           <h4 className="text-white font-semibold mb-2">Follow Us</h4>
-          <div className="flex gap-4 text-sm">
-            <a href="#" className="hover:text-white">Facebook</a>
-            <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">YouTube</a>
+          <div className="flex gap-4 text-2xl">
+            <a href="#" className="hover:text-white"><FaFacebook /></a>
+            <a href="#" className="hover:text-white"><FaInstagram /></a>
+            <a href="#" className="hover:text-white"><FaYoutube /></a>
           </div>
         </div>
       </div>
