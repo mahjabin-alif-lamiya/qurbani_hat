@@ -9,7 +9,7 @@
     "age": 3,
     "location": "Bogura",
     "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural খাবার.",
-    "image": "https://i.postimg.cc/xxx/cow1.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Local_Cow.jpg",
     "category": "Large Animal"
   },
   {
@@ -22,7 +22,7 @@
     "age": 2,
     "location": "Sirajganj",
     "description": "High quality crossbred cow, well maintained on farm feed.",
-    "image": "https://i.postimg.cc/xxx/cow2.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holstein_friesian_or_friesian_cow.jpg",
     "category": "Large Animal"
   },
   {
@@ -35,7 +35,7 @@
     "age": 1,
     "location": "Jashore",
     "description": "Popular breed for Qurbani, tender meat quality.",
-    "image": "https://i.postimg.cc/xxx/goat1.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Black_Bengal_Goat_00812.JPG",
     "category": "Small Animal"
   },
   {
@@ -48,7 +48,7 @@
     "age": 2,
     "location": "Rajshahi",
     "description": "Well groomed goat with shiny coat, farm raised.",
-    "image": "https://i.postimg.cc/xxx/goat2.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Black_Bengal_goats_for_Eid_ul_Adha.jpg",
     "category": "Small Animal"
   },
   {
@@ -61,7 +61,7 @@
     "age": 3,
     "location": "Pabna",
     "description": "Strong and healthy Sahiwal breed cow.",
-    "image": "https://i.postimg.cc/xxx/cow3.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sahiwal-_breed_cow_at_the_dairy_unit_attached_to_Bhai_Ram_Singh_Memorial_(Gurudwara)_,_Bhaini_Sahib_,Ludhyana,_Punjab_,India.JPG",
     "category": "Large Animal"
   },
   {
@@ -74,7 +74,7 @@
     "age": 2,
     "location": "Kushtia",
     "description": "Large sized goat breed, ideal for Qurbani.",
-    "image": "https://i.postimg.cc/xxx/goat3.jpg",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jamnapari_goat.jpg",
     "category": "Small Animal"
   }
 ]
