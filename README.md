@@ -4,7 +4,7 @@
 A modern web marketplace where users can browse cows and goats for Qurbani, view details, and place a booking after logging in. Built for the Software Engineering course assignment (Category A8-Pineapple).
 
 ## Live URL
-(deploy করার পর এখানে link বসানো হবে)
+(https://qurbani-hat-ebon-six.vercel.app/)
 
 ## Key Features
 - Home page with featured animals, Qurbani tips, and top breeds
