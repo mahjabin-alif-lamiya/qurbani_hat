@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "@/contexts/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import "animate.css";
 import "./globals.css";
 
 const geistSans = Geist({

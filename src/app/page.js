@@ -10,13 +10,13 @@ export default function HomePage() {
       
       {/* ১. Hero Section */}
       <section className="bg-green-700 text-white text-center py-20 px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 flex items-center justify-center gap-3">
+        <h1 className="animate__animated animate__fadeInDown text-4xl md:text-6xl font-extrabold mb-4 flex items-center justify-center gap-3">
           স্বাগতম কুরবানির হাটে! <FaCow className="text-white" />
         </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        <p className="animate__animated animate__fadeIn text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           আপনার কুরবানির জন্য সুস্থ, সবল এবং খাঁটি দেশি পশু বুকিং করুন ঘরে বসেই।
         </p>
-        <Link href="/animals" className="bg-white text-green-700 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition">
+        <Link href="/animals" className="animate__animated animate__fadeInUp bg-white text-green-700 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition inline-block">
           Browse Animals
         </Link>
       </section>
@@ -25,8 +25,12 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Featured Animals</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredAnimals.map((animal) => (
-            <div key={animal.id} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between">
+          {featuredAnimals.map((animal, index) => (
+            <div
+              key={animal.id}
+              className="animate__animated animate__fadeInUp bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <img src={animal.image} alt={animal.name} className="w-full h-48 object-cover" />
               <div className="p-4 flex-grow">
                 <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">{animal.type}</span>
